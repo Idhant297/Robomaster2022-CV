@@ -838,7 +838,7 @@ def main(camera: CameraSource, target_color: TargetColor, show_stream: str):
                     cv2.FONT_HERSHEY_SIMPLEX, 0.5, [0, 255, 0])
 
 
-        if show_stream == 'YES':
+        if show_stream == 'YES' or 'yes':
             cv2.imshow("original", frame)
             cv2.waitKey(1)
         else:
@@ -861,7 +861,7 @@ if __name__ == "__main__":
                         help='Path to record camera video to (MP4 format)')
     parser.add_argument('--debug', action='store_true',
                         help='Show intermediate results and debug output')
-    parser.add_argument('--show-stream', type=str, choices=['YES', 'NO'], default='NO',
+    parser.add_argument('--show-stream', type=str, choices=['YES', 'NO'], default='NO' or 'no',
                         help='Display the camera stream (YES or NO)')
 
 
